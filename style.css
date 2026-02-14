@@ -1,0 +1,239 @@
+/* Overlay لجميع الصفحات */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.25);
+    z-index: -1;
+}
+
+/* خلفيات لكل صفحة مع شفافية */
+body.home-bg { 
+    background: url("images/bg-home.jpg") center/cover no-repeat; 
+    direction: rtl; 
+    position: relative;
+}
+body.news-bg { 
+    background: url("images/bg-news.jpg") center/cover no-repeat; 
+    direction: rtl; 
+    position: relative;
+}
+body.events-bg { 
+    background: url("images/bg-events.jpg") center/cover no-repeat; 
+    direction: rtl; 
+    position: relative;
+}
+
+/* Glassmorphism للبطاقات */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 15px 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    color: #fff;
+    border-left: 5px solid transparent;
+border-image: linear-gradient(
+    to bottom,
+    rgba(155, 89, 182, 0.9),
+    rgba(26, 188, 156, 0.9)
+);
+border-image-slice: 1;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== روابط داخل البطاقات (معدلة) ===== */
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 7px 16px;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 188, 156, 0.85),
+        rgba(155, 89, 182, 0.85)
+    );
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.card a:hover { 
+    background: linear-gradient(
+        135deg,
+        rgba(155, 89, 182, 0.9),
+        rgba(26, 188, 156, 0.9)
+    );
+}
+
+/* ===== الأزرار (معدلة) ===== */
+button {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 188, 156, 0.85),
+        rgba(155, 89, 182, 0.85)
+    );
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+button:hover { 
+    background: linear-gradient(
+        135deg,
+        rgba(155, 89, 182, 0.9),
+        rgba(26, 188, 156, 0.9)
+    );
+}
+
+/* نصوص وعناوين */
+h1, h2, h3, h4 { 
+    margin: 0 0 10px 0; 
+    color: #fff; 
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+p { margin: 5px 0; }
+ul { margin: 5px 0 10px 20px; }
+
+/* ===== التنقل (معدل الألوان فقط) ===== */
+nav ul { 
+    list-style: none; 
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end; 
+}
+nav ul li a { 
+    text-decoration: none; 
+    color: white; 
+    padding: 8px 14px; 
+    border-radius: 6px; 
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav ul li a.active { 
+    background: linear-gradient(
+        135deg,
+        rgba(26, 188, 156, 0.35),
+        rgba(155, 89, 182, 0.35)
+    );
+    box-shadow: 0 0 10px rgba(26, 188, 156, 0.7);
+}
+nav ul li a:hover { 
+    background: linear-gradient(
+        135deg,
+        rgba(155, 89, 182, 0.35),
+        rgba(26, 188, 156, 0.35)
+    );
+    box-shadow: 0 0 10px rgba(155, 89, 182, 0.7);
+}
+
+/* الفوتر */
+footer { 
+    text-align: center; 
+    padding: 20px; 
+    color: #fff; 
+    background: rgba(0,0,0,0.35); 
+    backdrop-filter: blur(5px);
+}
+
+/* إحصائيات */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.stats .card {
+    flex: 1 1 150px;
+    margin: 10px;
+}
+
+/* البطاقات داخل النشرة والفعاليات */
+.newsletter .card,
+.events .card {
+    margin-bottom: 20px;
+}
+
+/* FAQ */
+.faq h3 { margin-top: 10px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul { justify-content: space-around; }
+    .stats { flex-direction: column; align-items: center; }
+}
+
+/* خلفيات بطاقات صفحة النشر */
+.bg-a { background: url("images/bg-a.jpg") center/cover; }
+.bg-bb { background: url("images/bg-bb.jpg") center/cover; }
+.bg-c { background: url("images/bg-c.jpg") center/cover; }
+.bg-d { background: url("images/bg-d.jpg") center/cover; }
+.bg-g { background: url("images/bg-g.jpg") center/cover; }
+.bg-f { background: url("images/bg-f.jpg") center/cover; }
+
+/* فواصل بصرية */
+section h2 {
+    position: relative;
+    padding-bottom: 10px;
+    margin: 40px 0 20px;
+}
+section h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #9b59b6, #1abc9c);
+    border-radius: 10px;
+}
+
+/* فاصل بين البطاقات */
+.card::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    right: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        rgba(155, 89, 182, 0.6),
+        rgba(26, 188, 156, 0.6)
+    );
+}
+.newsletter .card:last-of-type::after,
+.events .card:last-of-type::after,
+.stats .card:last-of-type::after {
+    display: none;
+}
+
+/* ===== الرابط الافتراضي (نص فقط) – معدل ===== */
+.fake-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: default;
+    color: transparent;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 188, 156, 0.9),
+        rgba(155, 89, 182, 0.9)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+}
